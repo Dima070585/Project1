@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+    <div class="col-9">
+        <div class="d-flex flex-column mb-3 align-items-center">
+                    <h3 class="text-center"><a class="link-dark" href=""
+                                               style="text-decoration: none;">{{ project.title }}</a></h3>
+                    <div class="align-self-center p-2 bd-highlight">
+                        <img style="width: 800px; height: 300px; object-fit: cover; padding-top: 15px; padding-bottom: 15px; margin-left: 30px;"
+                             src="{{ project.image.url }}">
+                    </div>
+                    <p class="w-75 mt-2">Tecnologies:{{ project.technology }}</p>
+                    <p class="w-75 mt-1">{{ project.desscription | truncatechars:170 }}</p>
+                </div>
+                <hr class="own-hr">
+    </div>
+</div>
+
+    </div>
+{% endblock %}

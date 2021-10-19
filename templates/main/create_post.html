@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Create new post{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-9 mt-5" style="margin: 0 auto">
+            <form method="post" class="col-6" style="margin:0 auto;" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.media }}
+                {{ form.as_p }}
+                {{ form.errors }}
+                <button type="submit" class="btn btn-success">Create!</button>
+            </form>
+        </div>
+
+
+    </div>
+{% endblock %}

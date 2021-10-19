@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+<h1 align="center">Reversed Text</h1>
+<a class="btn btn-primary btn-success" href="{% url 'home' %}" style="margin-left: 10px">home</a>
+<div class="row" style="margin-left: 35px; margin-top: 20px">
+    <h3>Original Text has {{ words }}  words</h3>
+    <p>{{ usertext }}</p>
+    <h3>Reversed Text</h3>
+    <p>{{ reversedtext }}</p>
+
+</div>
+{% endblock %}

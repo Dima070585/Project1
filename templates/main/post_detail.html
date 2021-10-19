@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}{{ post.title | truncatechars:15 }}{% endblock %}
+{% block content %}
+    <div class="col-9" style="margin: 0 auto; background: gainsboro">
+        <div class="d-flex flex-column mb-3 align-items-center">
+                    <h3 class="text-center"><a class="link-dark" href=""
+                                               style="text-decoration: none;">{{ post.title }}</a></h3>
+                    <div class="align-self-center p-2 bd-highlight">
+                        <img style="width: 800px; height: 300px; object-fit: cover; padding-top: 15px; padding-bottom: 15px; margin-left: 30px;"
+                             src="{{ post.image.url }}">
+                    </div>
+                    <p class="w-75 mt-1">{{ post.content |safe }}</p>
+                    <form method="post" action="{% url 'addtoshopcart' post.id %}">
+                        {% csrf_token %}
+                        <input name="quantity" type="number" value="1" min="1">
+                        <button type="submit">Add to cart</button>
+                    </form>
+                </div>
+                <hr class="own-hr">
+    </div>
+</div>
+
+    </div>
+{% endblock %}

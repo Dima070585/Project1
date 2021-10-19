@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Shopcart}{% endblock %}
+{% block content %}
+
+    <div class="col-9 mt-5" style="margin: 0 auto">
+    <table class="table">
+        <thead class="thead-light">
+        <tr>
+
+            <th scope="col">Назване</th>
+            <th scope="col">Категория</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Цена</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in cart %}
+        <tr>
+
+            <td>{{ item.products.title }}</td>
+            <td>{{ item.products.category }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.amount }}$</td>
+        {% endfor %}
+        <tr>
+            <th></th>
+            <th></th>
+            <th>Total price:</th>
+            <th>{{ total }}$</th>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
